@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="MightyMKc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./Media/cropped-cropped-Unbenannt.ico">
+    <title>Flag-Race Berechnung</title>
+    <link rel="stylesheet" href="design.css">
+    <script src="tagessiegerauswertungmixedrace.js"></script>
+  </head>
+
+  <body onload="createTableWithInputs()">
+    <h2 style="text-align: center;" > Bewertung vom Mixed-race</h2>
+    <!-- Sidebar-DIV -->
+    <div class="sidenav">
+      
+      <img src="Media/ESCRA.png">
+      <img src="Media/sidebar.png">
+      <p style="font-size: 15px; text-decoration: underline;">Übersichten der Wertungen</p>
+     <a href="Tagessieger.html">Tagessieger</a>
+     <a href="einpflegungvonstarterntagessieger.html">Einpflegung von Startern</a>
+     <p style="font-size: 15px; text-decoration: underline;">Berechnung der Diziplinen</p>
+     <a href="flagracetagessieger.html">Flag-Race</a>
+     <a href="polebendingtagessieger.html">Pole-Bending</a>
+     <a href="keyholeracetagessieger.html">Keyhole Race</a>
+     <a href="barrelracetagessieger.html">Barrel Race</a>
+     <a href="mixedracetagessieger.html">Mixed Race</a>
+ </div>
+   <!-- Sidebar-DIV --> 
+  <div class="main">
+    
+    
+   
+    
+  
+
+  
+    
+      <!-- Aufbau der Tabelle nach dem Übernehmen Klick-->
+    <div id="table" class="tables" >
+      <table id="tabelleberechnungflagrace">
+        <thead>
+            <tr>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Pferd</th>
+                <th>Zeit</th>
+                <th>Fehler</th>
+                <th>Disqualifiziert</th>
+            </tr>
+        </thead>
+    </table>
+
+    <button id="ErgebnisseSpeichern" onclick="ErgebnisseSpeichern()"  > Ergebnisse speichern</button>
+
+    
+  </div>
+
+    
+  
+
+  </body>
+
+
+
+
+</html>

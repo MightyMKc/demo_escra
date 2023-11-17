@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="MightyMKc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./Media/cropped-cropped-Unbenannt.ico">
+    <title>Einpflegen der Starter</title>
+    <link rel="stylesheet" href="design.css">
+    <script src="tagessiegereinflegungvonstartern.js"></script>
+  </head>
+
+  <body>
+    <h2 style="text-align: center;" > Einpflegung von Startern </h2>
+    
+    <div class="sidenav">
+      
+      <img src="Media/ESCRA.png">
+      <img src="Media/sidebar.png">
+      <p style="font-size: 15px; text-decoration: underline;">Übersichten der Wertungen</p>
+     <a href="Tagessieger.html">Tagessieger</a>
+     <a href="einpflegungvonstarterntagessieger.html">Einpflegung von Startern</a>
+     <p style="font-size: 15px; text-decoration: underline;">Berechnung der Diziplinen</p>
+     <a href="flagracetagessieger.html">Flag-Race</a>
+     <a href="polebendingtagessieger.html">Pole-Bending</a>
+     <a href="keyholeracetagessieger.html">Keyhole Race</a>
+     <a href="barrelracetagessieger.html">Barrel Race</a>
+     <a href="mixedracetagessieger.html">Mixed Race</a>
+ </div>
+   
+   
+  <div class="main">
+
+   
+      
+     
+
+      
+       
+      <h3> Einpflegung der Starter</h3>
+     
+      
+     
+      <div class="form">
+        <label>Name: <input id="vorname" type="text"></label>
+        <label>Nachname: <input id="nachname" type="text"></label>
+        <label>Pferd: <input id="pferd" type="text"></label>
+        <span id="error"></span>
+        <br>
+        <p></p>
+        <button onclick="tabelle_fnx()">Übernehmen</button>
+        <br>
+        <br>
+    </div>
+
+      <div id="tables" class="table" >
+        <table id="tableStarter">
+          <thead>
+              <tr>
+                  <th>Vorname</th>
+                  <th>Nachname</th>
+                  <th>Pferd</th>
+              </tr>
+          </thead>
+      </table>
+          
+
+
+        </table>  
+      
+      </div>
+
+      <p></p>
+      <button  id="tabletoarrayy" onclick="tableToArray()"> Speichern </button>
+
+
+  </div>
+
+  
+
+  </body>
+
+
+
+
+</html>

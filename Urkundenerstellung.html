@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urkunden Generator</title>
+    <link rel="stylesheet" type="text/css" href="urkundendesign.css">
+</head>
+<body>
+
+    <button onclick="generateCertificate()">Urkunde generieren</button>
+
+    <script>
+        function generateCertificate() {
+            // Hier könnten Sie den HTML-Code für die Urkunde erstellen
+            var certificateContent = "<h1>Urkunde</h1><p>Herzlichen Glückwunsch!</p>";
+
+            // Erstellen Sie ein neues Fenster oder einen neuen Tab, um die Urkunde anzuzeigen
+            var newWindow = window.open();
+            newWindow.document.write(certificateContent);
+        }
+    </script>
+
+</body>
+</html>

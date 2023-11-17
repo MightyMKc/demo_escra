@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="MightyMKc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./Media/cropped-cropped-Unbenannt.ico">
+    <title>Berechnung Mixed-Race</title>
+    <link rel="stylesheet" href="design.css">
+    <script src="auswertungmixedrace.js"></script>
+  </head>
+
+  <body>
+    <h2 style="text-align: center;" > Bewertung des Mixed Race </h2>
+    <div class="sidenav">
+      
+      <img src="Media/ESCRA.png">
+      <img src="Media/sidebar.png">
+      <p style="font-size: 15px; text-decoration: underline;">Übersichten der Wertungen</p>
+     <a href="vereinstagessieger.html">Tagessieger</a>
+     <a href="Auswertungenfinale.html">Gesamtsieger</a>
+     <a href="einpflegungvonstartern.html">Einpflegung von Startern</a>
+     <p style="font-size: 15px; text-decoration: underline;">Berechnung der Diziplinen</p>
+     <a href="flagrace.html">Flag-Race</a>
+     <a href="polebending.html">Pole-Bending</a>
+     <a href="keyholerace.html">Keyhole Race</a>
+     <a href="barrelrace.html">Barrel Race</a>
+     <a href="mixedrace.html">Mixed Race</a>
+     <p style="font-size: 15px; text-decoration: underline;">Finale</p>
+     <a href="finale.html">Finalliste</a>
+     <a href="Finalberechnungen.html">Finalwertungen</a>
+         
+   
+ </div>
+   <!-- Sidebar-DIV --> 
+  <div class="main">
+
+    <h3>Ort der Veranstaltung</h3>
+      <input type="radio" id="Oberlangen" name="ortwahl" value="Oberlangen">
+      <label for="Oberlangen">Oberlangen</label>
+      <input type="radio" id="Leer" name="ortwahl" value="Leer">
+      <label for="Leer">Leer</label>
+      <input type="radio" id="Wesuwe" name="ortwahl" value="Wesuwe">
+      <label for="Wesuwe">Wesuwe</label>
+      <input type="radio" id="Haren" name="ortwahl" value="Haren">
+      <label for="Haren">Haren</label>
+      <input type="radio" id="Isterberg" name="ortwahl" value="Isterberg">
+      <label for="Isterberg">Isterberg</label>
+
+    <h3> In welcher Klasse sollen die Ergebnisse eingetragen werden? </h3>
+    <input type="radio" id="Open" name="klassenwahl" value="Open">
+    <label for="Open">Open</label>
+    <input type="radio" id="Amateur" name="klassenwahl" value="Amateur">
+    <label for="Amateur">Amateur</label>
+    <input type="radio" id="Newcomer" name="klassenwahl" value="Newcomer">
+    <label for="Newcomer">Newcomer</label>
+    <input type="radio" id="Senior" name="klassenwahl" value="Senior">
+    <label for="Senior">Senior</label>
+    <input type="radio" id="Handicap" name="klassenwahl" value="Handicap">
+    <label for="Handicap">Handicap</label>
+    <input type="radio" id="Youth" name="klassenwahl" value="Youth">
+    <label for="Youth">Youth</label>
+    <input type="radio" id="Junior" name="klassenwahl" value="Junior">
+    <label for="Junior">Junior</label>
+    <input type="radio" id="Kiddy" name="klassenwahl" value="Kiddy">
+    <label for="Kiddy">Kiddy</label>
+
+    
+      <p></p>
+      <button id="uebernahme" onclick="createTableWithInputs()" >Übernehmen</button>
+      <p></p>
+    
+      <!-- Aufbau der Tabelle nach dem Übernehmen Klick-->
+    <div id="table" class="tables" >
+      <table id="tabelleberechnungflagrace">
+        <thead>
+            <tr>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Pferd</th>
+                <th>Zeit</th>
+                <th>Fehler</th>
+                <th>Disqualifiziert</th>
+            </tr>
+        </thead>
+    </table>
+
+    <button id="ErgebnisseSpeichern" onclick="ErgebnisseSpeichern()"  style="visibility: hidden;"> Ergebnisse speichern</button>
+
+    
+  </div>
+
+    
+  
+
+  </body>
+
+
+
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="MightyMKc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./Media/cropped-cropped-Unbenannt.ico">
+    <title>Tagessieger</title>
+    <link rel="stylesheet" href="design.css">
+    <script src="tagessiegerhome.js"></script>
+  </head>
+
+ 
+  <body>
+    <h2 style="text-align: center;" > Tageswertungen </h2>
+    <!-- Sidebar-DIV -->
+    <div class="sidenav">
+      
+      <img src="Media/ESCRA.png">
+      <img src="Media/sidebar.png">
+      <p style="font-size: 15px; text-decoration: underline;">Übersichten der Wertungen</p>
+     <a href="Tagessieger.html">Tagessieger</a>
+     <a href="einpflegungvonstarterntagessieger.html">Einpflegung von Startern</a>
+     <p style="font-size: 15px; text-decoration: underline;">Berechnung der Diziplinen</p>
+     <a href="flagracetagessieger.html">Flag-Race</a>
+     <a href="polebendingtagessieger.html">Pole-Bending</a>
+     <a href="keyholeracetagessieger.html">Keyhole Race</a>
+     <a href="barrelracetagessieger.html">Barrel Race</a>
+     <a href="mixedracetagessieger.html">Mixed Race</a>
+ </div>
+   <!-- Sidebar-DIV --> 
+  <div class="main">
+
+  
+    
+    
+
+    <h3> Welche Diziplin soll abgerufen werden? </h3>
+    <input type="radio" id="Flagrace" name="disziplinwahl" value="Flagrace">
+    <label for="Open">Flag-Race</label>
+    <input type="radio" id="Polebending" name="disziplinwahl" value="Polebending">
+    <label for="Amateur">Pole-Bending</label>
+    <input type="radio" id="Keyholerace" name="disziplinwahl" value="Keyholerace">
+    <label for="Keyholerace">Keyhole-Race</label>
+    <input type="radio" id="Barrelrace" name="disziplinwahl" value="Barrelrace">
+    <label for="Barrelrace">Barrel-Race</label>
+    <input type="radio" id="Mixedrace" name="disziplinwahl" value="Mixedrace">
+    <label for="Mixedrace">Mixed-Race</label>
+    <input type="radio" id="alle" name="disziplinwahl" value="alle">
+    <label for="alle">Alle Diziplinen</label>
+    
+   
+
+
+   
+      <p></p>
+      <button id="uebernehmen" onclick="defaultd()">Übernehmen</button>
+      <button id="Download" onclick="csvdown()">Download der Tabelle</button>
+      <button id="reset" onclick="resettable()" >Reset der Ansicht</button>
+      <br>
+      <p></p>
+      <div id="table" class="tabellergebnis" >
+        <table id="tabellergebnis">
+          <thead>
+              <tr>
+                  <th>Platz</th>
+                  <th>Vorname</th>
+                  <th>Nachname</th>
+                  <th>Pferd</th>
+                  <th>Zeit</th>
+                  <th>Fehler</th>
+                  <th>Gesamtzeit</th>
+                  <th>Punkte</th>
+                  <th>Disqualifiziert</th>
+              </tr>
+          </thead>
+
+          <tbody>
+
+          </tbody>
+      </table>
+  
+      <button id="ErgebnisseSpeichern" onclick="ErgebnisseSpeichern()"  style="visibility: hidden;"> Ergebnisse speichern</button>
+  
+      
+    </div>
+
+
+
+    
+    
+  </div>
+
+
+
+    <!-- Aufbau der Tabelle nach dem Übernehmen Klick-->
+
+  
+
+  </body>

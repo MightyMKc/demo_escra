@@ -1,0 +1,89 @@
+/*
+  #container {
+    position: relative;
+    background-image : url(background.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: alpha(opacity=60);
+    /* IE */
+    -moz-opacity: 0.6;
+    /* Mozilla */
+    opacity: 0.6;
+    /* CSS3 */
+    height: 100vh;
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+  }
+  #block {
+    
+    
+    height: 100vh;
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+    
+  }
+  #text {
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+    
+    
+    
+  }
+
+  */
+
+  function tabelle_fnx()
+{
+     var anzahl = document.getElementByID(15).value;
+    //document.getElementById(anzahlreiter).value= x;
+   
+    console.log(anzahl);
+    alert(anzahl);
+   
+}
+
+<table>
+        <tr>
+          <th>Vorname</th>
+          <th>Nachname</th>
+          <th>Pferd</th>
+        </tr>
+      </table>  
+
+
+
+
+function tabelle_fnx()
+{
+    anzahlstarter = document.getElementById('anzahlstarter').value;
+    console.log(anzahlstarter)
+
+  
+       
+
+
+}
+// Ort der Speciherung
+D:\ESCARA\GoogleChromePortable\Data\profile\Default\Local Storage\leveldb
+
+
+
+function flagrace_calc(){ 
+
+    //
+    const zeit = 0;
+    let tonnen;
+    let fahne;
+
+    let strafzeit = tonnen * 5 + fahne * 5;
+    // get time 
+
+    //get tonnen
+    // get fahnen
+
+    const ergebnis = zeit - strafzeit; 
+
+    return ergebnis;
+}

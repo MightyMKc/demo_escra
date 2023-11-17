@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="MightyMKc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./Media/cropped-cropped-Unbenannt.ico">
+    <title>Tagessieger</title>
+    <link rel="stylesheet" href="designindex.css">
+    <script src="auswahl.js"></script>
+    <style>
+        body {
+          margin: 0;
+          display: flex;
+          flex-direction: column; /* Ändere die Ausrichtung auf vertikal */
+          height: 100vh; /* 100% der Viewport-Höhe */
+          
+        }
+    
+        .bereich1 {
+          flex: 1; /* Jeder Bereich nimmt den verfügbaren Platz ein */
+          border: 5px solid #060606; /* Einfacher Rahmen für Sichtbarkeit */
+          box-sizing: border-box; /* Berücksichtige Rahmen in der Breite und Höhe */
+          text-align: center; 
+          border-radius: 10px;
+          font-family: "Lato", sans-serif;
+          margin-left: 0; /* Kleinere Standardgröße für die Sidebar */
+          background-image: url(Media/IMG_2517-1024x683.jpg);
+          background-size: cover;
+          background-position: initial;
+          background-repeat: no-repeat;
+          text-decoration: underline;
+        }
+
+        .bereich2 {
+          flex: 1; /* Jeder Bereich nimmt den verfügbaren Platz ein */
+          border: 5px solid #060606; /* Einfacher Rahmen für Sichtbarkeit */
+          box-sizing: border-box; /* Berücksichtige Rahmen in der Breite und Höhe */
+          text-align: center; 
+          border-radius: 10px;
+          border-radius: 10px;
+          font-family: "Lato", sans-serif;
+          margin-left: 0; /* Kleinere Standardgröße für die Sidebar */
+          background-image: url(Media/fort_worth_stock_show__rodeo-t2.jpg);
+          background-size: cover;
+          background-position:center;
+          background-repeat: no-repeat;
+          text-decoration: underline;
+        }
+      </style>
+      <title>Zwei vertikale Bereiche</title>
+    </head>
+    <body>
+    
+        <div class="bereich1" id="bereich1"  style="color: white;" onclick="handleBereichClick('Verein')">
+            <h2 >Vereinsauswertungen</h2>
+            
+          </div>
+        
+          <div class="bereich2" id="bereich2" style="color: white;"  onclick="handleBereichClick('Event')">
+            <h2>Event-Auswertung</h2>
+            
+          </div>
+        
+          <script>
+            function handleBereichClick(bereichName) {
+              
+              if(bereichName=='Verein'){
+                window.location.href = 'vereinstagessieger.html'
+              }
+              if(bereichName=='Event'){
+                window.location.href = 'Tagessieger.html'
+              }
+              // Hier kannst du weitere Aktionen für den Klick auf den Bereich hinzufügen
+            }
+          </script>
+    </body>
+    </html>

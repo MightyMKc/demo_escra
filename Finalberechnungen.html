@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="MightyMKc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./Media/cropped-cropped-Unbenannt.ico">
+    <title>Berechnung der Teilnehmerplatzierungen</title>
+    <link rel="stylesheet" href="design.css">
+    <script src="auswertungfinale.js"></script>
+  </head>
+
+  <body>
+    <h2 style="text-align: center;" > Finale-Disziplinen der besten 15 Reiter  </h2>
+    <!-- Sidebar-DIV -->
+    <div class="sidenav">
+      
+      <img src="Media/ESCRA.png">
+      <img src="Media/sidebar.png">
+      <p style="font-size: 15px; text-decoration: underline;">Übersichten der Wertungen</p>
+     <a href="vereinstagessieger.html">Tagessieger</a>
+     <a href="Auswertungenfinale.html">Gesamtsieger</a>
+     <a href="einpflegungvonstartern.html">Einpflegung von Startern</a>
+     <p style="font-size: 15px; text-decoration: underline;">Berechnung der Diziplinen</p>
+     <a href="flagrace.html">Flag-Race</a>
+     <a href="polebending.html">Pole-Bending</a>
+     <a href="keyholerace.html">Keyhole Race</a>
+     <a href="barrelrace.html">Barrel Race</a>
+     <a href="mixedrace.html">Mixed Race</a>
+     <p style="font-size: 15px; text-decoration: underline;">Finale</p>
+     <a href="finale.html">Finalliste</a>
+     <a href="Finalberechnungen.html">Finalwertungen</a>
+         
+   
+ </div>
+   <!-- Sidebar-DIV --> 
+   <div class="main">
+    <h3> In welcher Klasse findet das Finale statt? </h3>
+    <input type="radio" id="Open" name="klassenwahl" value="Open">
+    <label for="Open">Open</label>
+    <input type="radio" id="Amateur" name="klassenwahl" value="Amateur">
+    <label for="Amateur">Amateur</label>
+    <input type="radio" id="Newcomer" name="klassenwahl" value="Newcomer">
+    <label for="Newcomer">Newcomer</label>
+    <p></p>
+    <button id="uebernahme" onclick="FinalteilnehmerinTabelle()" >Übernehmen</button>
+    <p></p>
+    
+    <h3>Welche Diziplin soll eingetragen werden?</h3>
+    <input type="radio" id="Flagrace" name="ortwahl" value="Flagrace">
+    <label for="Flagrace">Flag-Race</label>
+    <input type="radio" id="Polebending" name="ortwahl" value="Polebending">
+    <label for="Polebending">Pole-Bending</label>
+    <input type="radio" id="Keyholerace" name="ortwahl" value="Keyholerace">
+    <label for="Keyholerace">Keyhole-Race</label>
+    <input type="radio" id="Barrelrace" name="ortwahl" value="Barrelrace">
+    <label for="Barrelrace">Barrel-Race</label>
+    <input type="radio" id="Mixedrace" name="ortwahl" value="Mixedrace">
+    <label for="Mixedrace">Mixed-Race</label>
+
+
+ 
+    <p></p>
+      <button id="Berechnung" onclick="berechnungen()" >Speichern der Werte </button>
+    <p></p>
+    
+      <!-- Aufbau der Tabelle nach dem Übernehmen Klick-->
+    <div id="table" class="tables" >
+      <table id="tabelleberechnungflagrace">
+        <thead>
+            <tr>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Pferd</th>
+                <th>Zeit</th>
+                <th>Fehler</th>
+                <th>Disqualifiziert</th>
+            </tr>
+        </thead>
+    </table>
+
+    <button id="ErgebnisseSpeichern" onclick="ErgebnisseSpeichern()"  style="visibility: hidden;"> Ergebnisse speichern</button>
+
+    
+  </div>
+
+    
+  
+
+  </body>
+
+
+
+
+</html>
