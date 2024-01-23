@@ -39,12 +39,17 @@ So stellt man sicher, dass die Ergebnisse auf dem Stick gespeichert werden und k
 # todo
 
 
-1. Tageswertung Finalehinzufügen
+1. Gesamtwertungen Finale 
+     -> Wir aus irgendeinem Grund in eienm Feld 0 reingeschrieben??
+          -> UNtersuchen ob das mit Typeconomation oä. zutun hat
 
-2. Urkunden []
+               -> Zur Finalassicht mahcen wir Objects!!!
+
+2. Verschiedene Use-Cases machen und mit echt Daten füttern 
 
 5. Design
 
--> Sidebar einblenden mit Hover 
--> Start Seite mit vernüpftigen Navigation evtl. mit Animationen zu den Plätzen
+-> Sidebar einblenden mit Hover x
+-> Start Seite mit vernüpftigen Navigation evtl. mit Animationen zu den Plätzen drin 
 -> unterreiter machen mit burger menü ?
+     

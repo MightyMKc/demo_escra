@@ -416,28 +416,6 @@ function gesamtergebnis(AllePunktearray){
  }
 
 
- function Add_Finalwerte(Arrayohneplatz){
-
-  //Das Array hatt alle Werte drin außer vom Finale 
-  const UebergebenesArray= Arrayohneplatz;
-  const z = 'Gesamtergebnisfinalarraysatzohneplatz'+abfrage_radio();
-  const resultref = localStorage.getItem(z);
-  const auswahlresult = JSON.parse(resultref);
-
-  if(auswahlresult === undefined || isNaN(auswahlresult)){
-
-    for(i=0;i < UebergebenesArray.length; i++){
-      UebergebenesArray[i].push('0');
-      return UebergebenesArray;
-    }
-
-  }
-
-  finalwertehinzufügen(UebergebenesArray,auswahlresult);
-
-}
-
-
 function finalwertehinzufügen(Liste,x){
 
 for (let i = 0; i < Liste.length; i++) {
@@ -457,7 +435,7 @@ for (let i = 0; i < Liste.length; i++) {
   }
 
   if (!gefunden) {
-    // Wenn die Werte nicht gefunden wurden, füge '0' hinzu
+     // Wenn die Werte nicht gefunden wurden, füge '0' hinzu
     Liste[i].push('0');
   }
 }
@@ -502,6 +480,8 @@ function ErgebnisseausdendiziArraysauslesen(NamenArray){
 }
 
 
+
+
  function CreateArrayFinal()
 {
    //Auslesen der GesamtarraysErgebnisse und abschneiden nur 15 besten werden in final array geschreiben ohne punkte nur Namen werden gezogen
@@ -519,33 +499,36 @@ function ErgebnisseausdendiziArraysauslesen(NamenArray){
       // Gesamtergebnisse
       const namen= namen_zusammentragen_alle();
    
-   // Verschachteltes Array in ein neues Array schreiben
-   const namenneu = verschachteltesArray(namen).filter(item => item !== undefined);
- 
-   // das Neue Array überprüfen und doppelte Einträge löschen
-   const dedup_namen=deDupp(namenneu);
-   const z = dedup_namen;
-   //Array alle Namen einfach
-   console.log(dedup_namen);
-   // FUNKTION zum auslesen der Gesamtpunkte aus den jeweiligen Orten zu den eindeutigen teilnehmern
-    const arraymitergebnisse=ErgebnisseausdenArraysauslesen(z);
-    console.log(arraymitergebnisse);
-  //Funkton zur Gesamtergebnis ermittlung und sortierung nach plätzen
-    const ohneplatz = Platzierungentfernen(arraymitergebnisse);
-    console.log(ohneplatz);
-    // Oohne Platz Array die Finalwerte hinzufügen
-      const finalarray = Add_Finalwerte(ohneplatz);
-      console.log(finalarray);
-  //  //Funktion gesamtwertungswert hinzufügen
-     const mitGesamtergebnis = gesamtergebnis(ohneplatz);
-  //  console.log(mitGesamtergebnis);
-    const Teilnehmerliste = sortierung_nachPaltzundaddPlatz(mitGesamtergebnis);
+       // Verschachteltes Array in ein neues Array schreiben
+      const namenneu = verschachteltesArray(namen).filter(item => item !== undefined);
+      //console.log(namenneu);
+      // das Neue Array überprüfen und doppelte Einträge löschen
+     
+      dedup_namen=deDupp(namenneu);
+      //console.log(dedup_namen);
+       const z = dedup_namen;
+      //Array alle Namen einfach
+      //console.log(dedup_namen);
+      // FUNKTION zum auslesen der Gesamtpunkte aus den jeweiligen Orten zu den eindeutigen teilnehmern
+      const arraymitergebnisse=ErgebnisseausdenArraysauslesen(z);
+      //console.log(arraymitergebnisse);
+      //Funkton zur Gesamtergebnis ermittlung und sortierung nach plätzen
+      const ohneplatz = Platzierungentfernen(arraymitergebnisse);
+      
+      const ObjektGesamtEregbnissemitFinale =ArraytoObject(ohneplatz);
+      
+  //Finalwerte aus den Arrays rauslesen
+  //Mit object auf     
+    
+
+
+     
   
-    storeFinalliste(Klasse,Teilnehmerliste);
+   // storeFinalliste(Klasse,Teilnehmerliste);
   //  // // Darstellen auf der Seite Tabelle aufbauen
-    tabelleaufbauen(Teilnehmerliste);
-    btn_hidden('Finallisteerzeugen');
-    btn_visible('reset');
+    tabelleaufbauen(GesamtEregbnissemitFinale);
+    //btn_hidden('Finallisteerzeugen');
+    //btn_visible('reset');
 
 
     }
@@ -574,6 +557,229 @@ function ErgebnisseausdendiziArraysauslesen(NamenArray){
    
    }
    
+
+}
+
+function endgültigefinalbewertung(z,zuüberprofen){
+
+ 
+  for (let i = 0; i < zuüberprofen.length; i++) {
+    let currentZuÜberprüfen = zuüberprofen[i];
+  
+    for (let j = 0; j < z.length; j++) {
+      let currentZ = z[j];
+  
+      // Überprüfen, ob Vorname, Nachname und Pferd übereinstimmen
+      if (
+        currentZ[0] === currentZuÜberprüfen[0] &&
+        currentZ[1] === currentZuÜberprüfen[1] &&
+        currentZ[2] === currentZuÜberprüfen[2]
+      ) {
+        // Wenn Übereinstimmung gefunden, füge z[6] zu zuüberprofen hinzu
+        currentZuÜberprüfen.push(currentZ[6]);
+        break; // Abbrechen, wenn eine Übereinstimmung gefunden wurde
+      }
+    }
+  }
+  
+  
+  return zuüberprofen
+  
+
+  
+}
+
+function finalwertefürobject(z,zuüberprofen){
+
+  for (let i = 0; i < zuüberprofen.length; i++) {
+    let currentZuÜberprüfen = zuüberprofen[i];
+  
+    for (let j = 0; j < z.length; j++) {
+      let currentZ = z[j];
+  
+      // Überprüfen, ob Vorname, Nachname und Pferd übereinstimmen
+      if (
+        currentZ[0] === currentZuÜberprüfen[0] &&
+        currentZ[1] === currentZuÜberprüfen[1] &&
+        currentZ[2] === currentZuÜberprüfen[2]
+      ) {
+        // Wenn Übereinstimmung gefunden, füge z[6] zu zuüberprofen hinzu
+        currentZuÜberprüfen.push(currentZ[8]);
+        break; // Abbrechen, wenn eine Übereinstimmung gefunden wurde
+      }
+    }
+  }
+
+  for (let i = 0; i < zuüberprofen.length; i++) {
+    // Extrahiere die Zahlen von x[3] bis x[6] und berechne ihre Summe
+    let sum = zuüberprofen[i].slice(3, 9).map(Number).reduce((acc, curr) => acc + curr, 0);
+  
+    // Füge die Summe als neuen Wert zum Eintrag hinzu
+    zuüberprofen[i].push(sum.toString());
+  }
+
+
+  
+  
+  return zuüberprofen
+
+}
+
+
+function ArraytoObject(BisFinale_nochohneFinale){
+
+  if(abfrage_radio()=='Open'){
+    var ArrayBezeichner = ['ErgebnisFlagraceOpenFinale', 'ErgebnisPolebendingOpenFinale' ,'ErgebnisKeyholeraceOpenFinale','ErgebnisBarrelraceOpenFinale','ErgebnisMixedraceOpenFinale'];
+    var Teilnehmerliste = [];
+    const prasearrayFlagrace = JSON.parse(localStorage.getItem(ArrayBezeichner[0]));
+    const prasearrayPolebending = JSON.parse(localStorage.getItem(ArrayBezeichner[1]));
+    const prasearrayKeyhohlerace = JSON.parse(localStorage.getItem(ArrayBezeichner[2]));
+    const prasearrayBarrelrace = JSON.parse(localStorage.getItem(ArrayBezeichner[3]));
+    const prasearrayMixedrace = JSON.parse(localStorage.getItem(ArrayBezeichner[4]));  
+    
+    //Namen holen zum Vergelcih
+    for (let i = 0; i < prasearrayPolebending.length; i++) {
+      // Erstelle ein neues Array mit den  3 Elementen aus jedem inneren Array
+      const subArray = prasearrayPolebending[i].slice(0, 3);
+      Teilnehmerliste.push(subArray);
+    }
+
+
+    var Teil0=endgültigefinalbewertung(prasearrayFlagrace,Teilnehmerliste)
+    var Teil1= endgültigefinalbewertung(prasearrayPolebending,Teil0)
+    var Teil2 =  endgültigefinalbewertung(prasearrayKeyhohlerace,Teil1)
+    var Teil3 =  endgültigefinalbewertung(prasearrayBarrelrace,Teil2)
+    var Teil4 = endgültigefinalbewertung(prasearrayMixedrace,Teil3)
+    
+
+
+    for (let i = 0; i < Teil4.length; i++) {
+      // Extrahiere die Zahlen von x[3] bis x[6] und berechne ihre Summe
+      let sum = Teil4[i].slice(3, 8).map(Number).reduce((acc, curr) => acc + curr, 0);
+    
+      // Füge die Summe als neuen Wert zum Eintrag hinzu
+      Teil4[i].push(sum.toString());
+    }
+    
+    
+    
+
+    
+   
+
+  }
+  if(abfrage_radio=='Amateur'){
+    var ArrayBezeichner = ['ErgebnisFlagraceOpenFinale', 'ErgebnisPolebendingOpenFinale' ,'ErgebnisKeyholeraceOpenFinale','ErgebnisBarrelraceOpenFinale','ErgebnisMixedraceOpenFinale'];
+    var Teilnehmerliste = [];
+    const prasearrayFlagrace = JSON.parse(localStorage.getItem(ArrayBezeichner[0]));
+    const prasearrayPolebending = JSON.parse(localStorage.getItem(ArrayBezeichner[1]));
+    const prasearrayKeyhohlerace = JSON.parse(localStorage.getItem(ArrayBezeichner[2]));
+    const prasearrayBarrelrace = JSON.parse(localStorage.getItem(ArrayBezeichner[3]));
+    const prasearrayMixedrace = JSON.parse(localStorage.getItem(ArrayBezeichner[4]));  
+    let Teilnehmer= [] ; 
+    //Namen holen zum Vergelcih
+    for (let i = 0; i < prasearrayPolebending.length; i++) {
+      // Erstelle ein neues Array mit den  3 Elementen aus jedem inneren Array
+      const subArray = prasearrayPolebending[i].slice(0, 3);
+      Teilnehmerliste.push(subArray);
+    }
+
+
+    var Teil0=endgültigefinalbewertung(prasearrayFlagrace,Teilnehmerliste)
+    var Teil1= endgültigefinalbewertung(prasearrayPolebending,Teil0)
+    var Teil2 =  endgültigefinalbewertung(prasearrayKeyhohlerace,Teil1)
+    var Teil3 =  endgültigefinalbewertung(prasearrayBarrelrace,Teil2)
+    var Teil4 = endgültigefinalbewertung(prasearrayMixedrace,Teil3)
+    
+
+
+    for (let i = 0; i < Teil4.length; i++) {
+      // Extrahiere die Zahlen von x[3] bis x[6] und berechne ihre Summe
+      let sum = Teil4[i].slice(3, 8).map(Number).reduce((acc, curr) => acc + curr, 0);
+    
+      // Füge die Summe als neuen Wert zum Eintrag hinzu
+      Teil4[i].push(sum.toString());
+    }
+    
+    
+  }
+  if(abfrage_radio=='Newcomer'){
+    var ArrayBezeichner = ['ErgebnisFlagraceOpenFinale', 'ErgebnisPolebendingOpenFinale' ,'ErgebnisKeyholeraceOpenFinale','ErgebnisBarrelraceOpenFinale','ErgebnisMixedraceOpenFinale'];
+    var Teilnehmerliste = [];
+    const prasearrayFlagrace = JSON.parse(localStorage.getItem(ArrayBezeichner[0]));
+    const prasearrayPolebending = JSON.parse(localStorage.getItem(ArrayBezeichner[1]));
+    const prasearrayKeyhohlerace = JSON.parse(localStorage.getItem(ArrayBezeichner[2]));
+    const prasearrayBarrelrace = JSON.parse(localStorage.getItem(ArrayBezeichner[3]));
+    const prasearrayMixedrace = JSON.parse(localStorage.getItem(ArrayBezeichner[4]));  
+    let Teilnehmer= [] ; 
+    //Namen holen zum Vergelcih
+    for (let i = 0; i < prasearrayPolebending.length; i++) {
+      // Erstelle ein neues Array mit den  3 Elementen aus jedem inneren Array
+      const subArray = prasearrayPolebending[i].slice(0, 3);
+      Teilnehmerliste.push(subArray);
+    }
+
+
+    var Teil0=endgültigefinalbewertung(prasearrayFlagrace,Teilnehmerliste);
+    var Teil1= endgültigefinalbewertung(prasearrayPolebending,Teil0);
+    var Teil2 =  endgültigefinalbewertung(prasearrayKeyhohlerace,Teil1);
+    var Teil3 =  endgültigefinalbewertung(prasearrayBarrelrace,Teil2);
+    var Teil4 = endgültigefinalbewertung(prasearrayMixedrace,Teil3);
+    
+
+
+    for (let i = 0; i < Teil4.length; i++) {
+      // Extrahiere die Zahlen von x[3] bis x[6] und berechne ihre Summe
+      let sum = Teil4[i].slice(3, 8).map(Number).reduce((acc, curr) => acc + curr, 0);
+    
+      // Füge die Summe als neuen Wert zum Eintrag hinzu
+      Teil4[i].push(sum.toString());
+    }
+    
+    
+
+  }
+
+
+
+  
+
+  const mitfinale= finalwertefürobject(Teil4,BisFinale_nochohneFinale,);
+
+
+
+
+
+
+
+
+
+
+  //Object erstellen mit den jeweiligen Weret mit FInale   
+  let result = [];
+
+  for (let i = 0; i < mitfinale.length; i++) {
+    let obj = {
+        vorname: mitfinale[i][0],
+        nachname: mitfinale[i][1],
+        pferd: mitfinale[i][2],
+        ergebnisOberlangen: mitfinale[i][3],
+        ergebnisLeer: mitfinale[i][4],
+        ergebnisWesuwe: mitfinale[i][5],
+        ergebnisHaren: mitfinale[i][6],
+        ergebnisIsterberg: mitfinale[i][7],
+        ergebnisFinale: mitfinale[i][8],
+        ergebnisGesamtpunkte:mitfinale[i][9]
+        
+    };
+    result.push(obj);
+  }
+
+    console.log(result);
+    return(result);
+
+ 
+
 
 }
 
@@ -623,7 +829,8 @@ function Add_Finalwerte_Diziabheangig(Arrayohneplatz){
 
   }
 
-  
+
+
 
 }
 
