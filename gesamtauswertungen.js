@@ -526,7 +526,8 @@ function ErgebnisseausdendiziArraysauslesen(NamenArray){
   
    // storeFinalliste(Klasse,Teilnehmerliste);
   //  // // Darstellen auf der Seite Tabelle aufbauen
-    tabelleaufbauen(GesamtEregbnissemitFinale);
+   // tabelleaufbauen(GesamtEregbnissemitFinale);
+   tabelleaufbauenmitobject(ObjektGesamtEregbnissemitFinale);
     //btn_hidden('Finallisteerzeugen');
     //btn_visible('reset');
 
@@ -557,6 +558,42 @@ function ErgebnisseausdendiziArraysauslesen(NamenArray){
    
    }
    
+
+}
+
+
+function tabelleaufbauenmitobject(obj){
+
+ console.log(obj);
+
+  // Tabellenkörper auswählen (ohne explizite ID)
+  let tabellenkörper = document.getElementById('tabellergebnis').createTBody();
+
+  // Iteriere durch jedes Objekt und füge eine neue Zeile in die Tabelle ein
+  obj.forEach(objekt => {
+    // Erstelle eine neue Zeile
+    let zeile = document.createElement('tr');
+
+    // Definiere die Reihenfolge der Eigenschaften
+    let eigenschaftenReihenfolge = ['platz', 'vorname', 'nachname', 'pferd', 'ergebnisOberlangen', 'ergebnisLeer', 'ergebnisWesuwe', 'ergebnisHaren', 'ergebnisIsterberg', 'ergebnisFinale', 'ergebnisGesamtpunkte'];
+
+    // Iteriere durch jede Eigenschaft und füge die Zelle in die Zeile ein
+    eigenschaftenReihenfolge.forEach(eigenschaft => {
+      let zelle = document.createElement('td');
+      zelle.textContent = objekt[eigenschaft];
+      zeile.appendChild(zelle);
+    });
+
+    // Füge die Zeile dem Tabellenkörper hinzu
+    tabellenkörper.appendChild(zeile);
+  });
+
+
+
+
+  
+
+
 
 }
 
@@ -618,6 +655,22 @@ function finalwertefürobject(z,zuüberprofen){
     zuüberprofen[i].push(sum.toString());
   }
 
+
+   
+
+ 
+    
+    // Sortiere das Array basierend auf dem letzten Eintrag in jedem Unterarray (als Zahl interpretiert)
+    zuüberprofen.sort((a, b) => parseInt(b[b.length - 1]) - parseInt(a[a.length - 1]));
+    
+    // Nummeriere die Einträge von oben nach unten
+    let counter = 1;
+    for (let i = 0; i < zuüberprofen.length; i++) {
+      zuüberprofen[i].unshift(counter.toString());
+      counter++;
+    }
+    
+    console.log(zuüberprofen);    
 
   
   
@@ -760,16 +813,17 @@ function ArraytoObject(BisFinale_nochohneFinale){
 
   for (let i = 0; i < mitfinale.length; i++) {
     let obj = {
-        vorname: mitfinale[i][0],
-        nachname: mitfinale[i][1],
-        pferd: mitfinale[i][2],
-        ergebnisOberlangen: mitfinale[i][3],
-        ergebnisLeer: mitfinale[i][4],
-        ergebnisWesuwe: mitfinale[i][5],
-        ergebnisHaren: mitfinale[i][6],
-        ergebnisIsterberg: mitfinale[i][7],
-        ergebnisFinale: mitfinale[i][8],
-        ergebnisGesamtpunkte:mitfinale[i][9]
+        platz: mitfinale[i][0],
+        vorname: mitfinale[i][1],
+        nachname: mitfinale[i][2],
+        pferd: mitfinale[i][3],
+        ergebnisOberlangen: mitfinale[i][4],
+        ergebnisLeer: mitfinale[i][5],
+        ergebnisWesuwe: mitfinale[i][6],
+        ergebnisHaren: mitfinale[i][7],
+        ergebnisIsterberg: mitfinale[i][8],
+        ergebnisFinale: mitfinale[i][9],
+        ergebnisGesamtpunkte:mitfinale[i][10]
         
     };
     result.push(obj);
