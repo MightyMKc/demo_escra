@@ -45,7 +45,11 @@ So stellt man sicher, dass die Ergebnisse auf dem Stick gespeichert werden und k
 
                -> Zur Finalassicht mahcen wir Objects!!!
 
-2. Verschiedene Use-Cases machen und mit echt Daten füttern 
+               -> Gesamtwertungen der Reiter für alle Klassen testen insbesonder Senior-> Kiddy
+
+
+2. Urkunden ertsellung mehr automatisieren
+     -> jeweilge Ordnerstuktur organisieren
 
 5. Design
 
@@ -53,3 +57,8 @@ So stellt man sicher, dass die Ergebnisse auf dem Stick gespeichert werden und k
 -> Start Seite mit vernüpftigen Navigation evtl. mit Animationen zu den Plätzen drin 
 -> unterreiter machen mit burger menü ?
      
+
+
+Features 
+     -> CSV als teilnehmerliste einfügen 
+     ->
