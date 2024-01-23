@@ -528,7 +528,7 @@ function ErgebnisseausdendiziArraysauslesen(NamenArray){
   //  // // Darstellen auf der Seite Tabelle aufbauen
    // tabelleaufbauen(GesamtEregbnissemitFinale);
    tabelleaufbauenmitobject(ObjektGesamtEregbnissemitFinale);
-    //btn_hidden('Finallisteerzeugen');
+    btn_hidden('Finallisteerzeugen');
     //btn_visible('reset');
 
 
@@ -587,15 +587,14 @@ function tabelleaufbauenmitobject(obj){
     // Füge die Zeile dem Tabellenkörper hinzu
     tabellenkörper.appendChild(zeile);
   });
-
-
-
-
   
 
 
-
 }
+
+
+
+
 
 function endgültigefinalbewertung(z,zuüberprofen){
 
