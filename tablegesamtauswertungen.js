@@ -8,7 +8,7 @@ function main(){
     const tablearrayWesuwe= holen_der_Auswahl(2);
     const tableHaren= holen_der_Auswahl(3);
     const tableIsterberg= holen_der_Auswahl(4);
-    const tablefinale= holen_der_Auswahl(5);
+    const tablefinale= getFinal();
 
     console.log(tablearrayOberlangen);
     console.log(tablearrayLeer);
@@ -18,10 +18,14 @@ function main(){
     console.log(tablefinale);
   
  
-    
+    Gesamtergebnisfinalarraysatzohneplatz
 
     
     
+}
+
+function getFinal(){
+
 }
 
 function getLocalStorage(AnfangsverweisString,ArraymitVerweisen,){
@@ -41,16 +45,16 @@ function holen_der_Auswahl(turnwert){
    
     
 
-    const VerweiseOrte= ['Oberlangen','Leer', 'Wesuwe', 'Haren' , 'Isterberg', 'Finale'] 
+    const VerweiseOrte= ['Oberlangen','Leer', 'Wesuwe', 'Haren' , 'Isterberg'] 
     
     var OberlangenGesamtergebnis=[];
     var LeerGesamtergebnis=[];
     var WesuweGesamtergebnis=[];
     var HarenGesamtergebnis=[];
     var IsterbergGesamtergebnis=[];
-    var FinaleGesamtergebnis=[];
+    
 
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 5; i++) {
         
         var ergebnis = getLocalStorage("Endergebnis", VerweiseOrte[i]);
     
@@ -72,9 +76,6 @@ function holen_der_Auswahl(turnwert){
             case 4:
                 IsterbergGesamtergebnis.push(ergebnis);
                 break;
-            case 5:
-                FinaleGesamtergebnis.push(ergebnis);
-                break;
             default:
                 break;
         }
@@ -92,12 +93,11 @@ function holen_der_Auswahl(turnwert){
             return HarenGesamtergebnis;         
         case 4:
             return IsterbergGesamtergebnis;
-        case 5:
-            FinaleGesamtergebnis;
         default:
         break;
     }
     
+
 
    }
 
