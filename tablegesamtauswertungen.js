@@ -10,21 +10,33 @@ function main(){
     const tableIsterberg= holen_der_Auswahl(4);
     const tablefinale= getFinal();
 
-    console.log(tablearrayOberlangen);
-    console.log(tablearrayLeer);
-    console.log(tablearrayWesuwe);
-    console.log(tableHaren);
-    console.log(tableIsterberg);
-    console.log(tablefinale);
+
+   console.log(tablefinale);
   
- 
-    Gesamtergebnisfinalarraysatzohneplatz
 
     
     
 }
 
+function entferneErstenEintrag(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        // Überprüfe, ob das Unterarray nicht leer ist
+        if (arr[i].length > 0) {
+            // Entferne den ersten Eintrag im Unterarray
+            arr[i].shift();
+        }
+    }
+}
+
 function getFinal(){
+    const JSON_Ref = 'Gesamtergebnisfinalarraysatzohneplatz'+ abfrage_radio();
+    const resultref = localStorage.getItem(JSON_Ref);
+    
+    
+    const ArrayausLocalStore = JSON.parse(resultref);
+  
+
+    return ArrayausLocalStore;
 
 }
 
@@ -35,7 +47,7 @@ function getLocalStorage(AnfangsverweisString,ArraymitVerweisen,){
     
     
     const ArrayausLocalStore = JSON.parse(resultref);
-  
+    entferneErstenEintrag(ArrayausLocalStore)
 
     return ArrayausLocalStore;
 }
