@@ -6,7 +6,7 @@
     <meta name="author" content="Michael Kröger">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./Media/cropped-cropped-Unbenannt.ico">
-    <title>Finalteilnehmer & Diziplinen</title>
+    <title> Gesamtwertungen</title>
     <link rel="stylesheet" href="design.css">
     <script src="tablegesamtauswertungen.js"></script>
     <style>
@@ -18,7 +18,7 @@
 
  
   <body>
-    <h2 style="text-align: center;">Gesamtwertungen der Reiter</h2>
+    <h2 style="text-align: center;">Gesamtwertungen der Reiter zu Klassen</h2>
     <!-- Sidebar-DIV -->
     <div class="sidenav">
       
@@ -68,22 +68,9 @@
         
         
       
-        <h4> Welche Gesamtergebnisse sollen angezeigt werden?</h4>
+    
         <p></p>
-        <input type="radio" id="Flagrace" name="disziplinwahl" value="Flagrace">
-        <label for="Open">Flag-Race</label>
-        <input type="radio" id="Polebending" name="disziplinwahl" value="Polebending">
-        <label for="Amateur">Pole-Bending</label>
-        <input type="radio" id="Keyholerace" name="disziplinwahl" value="Keyholerace">
-        <label for="Keyholerace">Keyhole-Race</label>
-        <input type="radio" id="Barrelrace" name="disziplinwahl" value="Barrelrace">
-        <label for="Barrelrace">Barrel-Race</label>
-        <input type="radio" id="Mixedrace" name="disziplinwahl" value="Mixedrace">
-        <label for="Mixedrace">Mixed-Race</label>
-        <input type="radio" id="alle" name="disziplinwahl" value="alle">
-        <label for="alle">Alle Diziplinen</label>
-        <p></p>
-        <button id="Finallisteerzeugen"   onclick="CreateArrayFinal()" > Ergebnisse anzeigen</button>
+        <button id="Finallisteerzeugen"   onclick="main()" > Ergebnisse anzeigen</button>
         <button id="uebernehmen" onclick="csvdown()">Download der Tabelle</button>
         <button id="reset" onclick="resettable()" >Reset der Ansicht</button>
         <p></p>
