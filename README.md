@@ -39,13 +39,9 @@ So stellt man sicher, dass die Ergebnisse auf dem Stick gespeichert werden und k
 # todo
 
 
-1. Gesamtwertungen Finale 
-     -> Wir aus irgendeinem Grund in eienm Feld 0 reingeschrieben??
-          -> UNtersuchen ob das mit Typeconomation oä. zutun hat
-
-               -> Zur Finalassicht mahcen wir Objects!!!
-
-               -> Gesamtwertungen der Reiter für alle Klassen testen insbesonder Senior-> Kiddy
+1. Tabelle aller Teilnehmer einer Klasse mit allen Werten -> Finalteilnehmer und nicht Finalteilnehmer als Tabelle der besten     
+     -> neue Seite mit neuen funktion 
+     
 
 
 2. Urkunden ertsellung mehr automatisieren

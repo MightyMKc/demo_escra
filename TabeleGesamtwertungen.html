@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Michael Kröger">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./Media/cropped-cropped-Unbenannt.ico">
+    <title>Finalteilnehmer & Diziplinen</title>
+    <link rel="stylesheet" href="design.css">
+    <script src="tablegesamtauswertungen.js"></script>
+    <style>
+      .gold { background-color: gold; }
+      .silber { background-color: silver; }
+      .bronze { background-color: #cd7f32; } /* Farbcode für Bronze */
+    </style>
+  </head>
+
+ 
+  <body>
+    <h2 style="text-align: center;">Gesamtwertungen der Reiter</h2>
+    <!-- Sidebar-DIV -->
+    <div class="sidenav">
+      
+      <img src="Media/ESCRA.png">
+      <img src="Media/sidebar.png">
+      <p style="font-size: 15px; text-decoration: underline;">Übersichten der Wertungen</p>
+     <a href="vereinstagessieger.html">Tagessieger</a>
+     <a href="Auswertungenfinale.html">Gesamtsieger</a>
+     <a href="einpflegungvonstartern.html">Einpflegung von Startern</a>
+     <p style="font-size: 15px; text-decoration: underline;">Berechnung der Diziplinen</p>
+     <a href="flagrace.html">Flag-Race</a>
+     <a href="polebending.html">Pole-Bending</a>
+     <a href="keyholerace.html">Keyhole Race</a>
+     <a href="barrelrace.html">Barrel Race</a>
+     <a href="mixedrace.html">Mixed Race</a>
+     <p style="font-size: 15px; text-decoration: underline;">Finale</p>
+     <a href="finale.html">Finalliste</a>
+     <a href="Finalberechnungen.html">Finalwertungen</a>
+         
+   
+ </div>
+   <!-- Sidebar-DIV --> 
+  <div class="main">
+    
+    
+
+   
+      <h3>Für welche Klasse sollen die Gesamtergebnisse angezeigt werden?</h3>
+      <input type="radio" id="Open" name="klassenwahl" value="Open">
+      <label for="Open">Open</label>
+      <input type="radio" id="Amateur" name="klassenwahl" value="Amateur">
+      <label for="Amateur">Amateur</label>
+      <input type="radio" id="Newcomer" name="klassenwahl" value="Newcomer">
+      <label for="Newcomer">Newcomer</label>
+      
+      <input type="radio" id="Senior" name="klassenwahl" value="Senior">
+      <label for="Senior">Senior</label>
+      <input type="radio" id="Handicap" name="klassenwahl" value="Handicap">
+      <label for="Handicap">Handicap</label>
+      <input type="radio" id="Youth" name="klassenwahl" value="Youth">
+      <label for="Youth">Youth</label>
+      <input type="radio" id="Junior" name="klassenwahl" value="Junior">
+      <label for="Junior">Junior</label>
+      <input type="radio" id="Kiddy" name="klassenwahl" value="Kiddy">
+      <label for="Kiddy">Kiddy</label>       
+      
+        
+        
+      
+        <h4> Welche Gesamtergebnisse sollen angezeigt werden?</h4>
+        <p></p>
+        <input type="radio" id="Flagrace" name="disziplinwahl" value="Flagrace">
+        <label for="Open">Flag-Race</label>
+        <input type="radio" id="Polebending" name="disziplinwahl" value="Polebending">
+        <label for="Amateur">Pole-Bending</label>
+        <input type="radio" id="Keyholerace" name="disziplinwahl" value="Keyholerace">
+        <label for="Keyholerace">Keyhole-Race</label>
+        <input type="radio" id="Barrelrace" name="disziplinwahl" value="Barrelrace">
+        <label for="Barrelrace">Barrel-Race</label>
+        <input type="radio" id="Mixedrace" name="disziplinwahl" value="Mixedrace">
+        <label for="Mixedrace">Mixed-Race</label>
+        <input type="radio" id="alle" name="disziplinwahl" value="alle">
+        <label for="alle">Alle Diziplinen</label>
+        <p></p>
+        <button id="Finallisteerzeugen"   onclick="CreateArrayFinal()" > Ergebnisse anzeigen</button>
+        <button id="uebernehmen" onclick="csvdown()">Download der Tabelle</button>
+        <button id="reset" onclick="resettable()" >Reset der Ansicht</button>
+        <p></p>
+        <div id="table" class="tabellergebnis" >
+          <table id="tabellergebnis">
+            <thead>
+                <tr>
+                    <th>Nr.</th>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>Pferd</th>
+                    <th>Oberlangen</th>
+                    <th>Leer</th>
+                    <th>Wesuwe</th>
+                    <th>Haren</th>
+                    <th>Isterberg</th>
+                    <th>Finale</th>
+                    <th>Gesamtpunkte</th>                                     
+                </tr>
+            </thead>
+  
+            <tbody>
+  
+            </tbody>
+        </table>
+   
+    </div>
+
+
+
+    
+    
+  </div>
+
+
+
+    <!-- Aufbau der Tabelle nach dem Übernehmen Klick-->
+
+  
+
+  </body>
