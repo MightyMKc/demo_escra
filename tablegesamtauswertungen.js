@@ -5,21 +5,26 @@ function main(){
     
    //Deklarierung der NamenArrays
    const ArrayNamenderStarterOpen = holen_der_Starter('Open');
-//    const ArrayNamenderStarterAmateur= holen_der_Starter('Amateur');
-//    const ArrayNamenderStarterNewcomer= holen_der_Starter('Newcomer');
-//    const ArrayNamenderStarterSenior= holen_der_Starter('Senior');
-//    const ArrayNamenderStarterHandicap= holen_der_Starter('Handicap');
-//    const ArrayNamenderStarterJunior= holen_der_Starter('Junior');
-//    const ArrayNamenderStarterKiddy= holen_der_Starter('Kiddy');
+   const ArrayNamenderStarterAmateur= holen_der_Starter('Amateur');
+   const ArrayNamenderStarterNewcomer= holen_der_Starter('Newcomer');
+   const ArrayNamenderStarterSenior= holen_der_Starter('Senior');
+   const ArrayNamenderStarterHandicap= holen_der_Starter('Handicap');
+   const ArrayNamenderStarterJunior= holen_der_Starter('Junior');
+   const ArrayNamenderStarterKiddy= holen_der_Starter('Kiddy');
 
    
-    console.log(ArrayNamenderStarterOpen);
-  
 
     
     
 }
 
+
+
+
+
+
+
+//Funktionen für Namenslisten 
 function holen_der_Starter(Klasse){
 
     const Orte = ['Oberlangen','Leer', 'Wesuwe', 'Haren' , 'Isterberg'];
@@ -68,8 +73,8 @@ function removeDuplicates(innerArray) {
 
 
 
-
-function abfrage_radio(){
+//AbfrageKlasse
+function abfrage_klasse(){
     //Definierung Radio Buttons
     let radio1 = document.getElementById('Open');
     let radio2 = document.getElementById('Amateur');
@@ -119,6 +124,7 @@ function abfrage_radio(){
   
     return Klasse;
   }
+//RestAnsicht
 function resettable (){
    //btn_visible('uebernehmen');
    //const tableBody = document.querySelector('#tabellergebnis tbody');
