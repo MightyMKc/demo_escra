@@ -1,134 +1,68 @@
 function main(){
 
+    //Mainfunktion zum Aufbau der Wertungstabelle einer gesamten Klasse
     
     
-   //
-    const tablearrayOberlangen = holen_der_Auswahl(0);
-    const tablearrayLeer= holen_der_Auswahl(1);
-    const tablearrayWesuwe= holen_der_Auswahl(2);
-    const tableHaren= holen_der_Auswahl(3);
-    const tableIsterberg= holen_der_Auswahl(4);
-    const tablefinale= getFinal();
-
-
-   console.log(tablefinale);
-  
-
-    
-    
-}
-
-function entferneErstenEintrag(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        // Überprüfe, ob das Unterarray nicht leer ist
-        if (arr[i].length > 0) {
-            // Entferne den ersten Eintrag im Unterarray
-            arr[i].shift();
-        }
-    }
-}
-
-function getFinal(){
-    const JSON_Ref = 'Gesamtergebnisfinalarraysatzohneplatz'+ abfrage_radio();
-    const resultref = localStorage.getItem(JSON_Ref);
-    
-    
-    const ArrayausLocalStore = JSON.parse(resultref);
-  
-
-    return ArrayausLocalStore;
-
-}
-
-function getLocalStorage(AnfangsverweisString,ArraymitVerweisen,){
-
-    const JSON_Ref = AnfangsverweisString + abfrage_radio() + ArraymitVerweisen;
-    const resultref = localStorage.getItem(JSON_Ref);
-    
-    
-    const ArrayausLocalStore = JSON.parse(resultref);
-    entferneErstenEintrag(ArrayausLocalStore)
-
-    return ArrayausLocalStore;
-}
-
-function holen_der_Auswahl(turnwert){
+   //Deklarierung der NamenArrays
+   const ArrayNamenderStarterOpen = holen_der_Starter('Open');
+//    const ArrayNamenderStarterAmateur= holen_der_Starter('Amateur');
+//    const ArrayNamenderStarterNewcomer= holen_der_Starter('Newcomer');
+//    const ArrayNamenderStarterSenior= holen_der_Starter('Senior');
+//    const ArrayNamenderStarterHandicap= holen_der_Starter('Handicap');
+//    const ArrayNamenderStarterJunior= holen_der_Starter('Junior');
+//    const ArrayNamenderStarterKiddy= holen_der_Starter('Kiddy');
 
    
-    
+    console.log(ArrayNamenderStarterOpen);
+  
 
-    const VerweiseOrte= ['Oberlangen','Leer', 'Wesuwe', 'Haren' , 'Isterberg'] 
     
-    var OberlangenGesamtergebnis=[];
-    var LeerGesamtergebnis=[];
-    var WesuweGesamtergebnis=[];
-    var HarenGesamtergebnis=[];
-    var IsterbergGesamtergebnis=[];
     
+}
 
-    for (var i = 0; i < 5; i++) {
+function holen_der_Starter(Klasse){
+
+    const Orte = ['Oberlangen','Leer', 'Wesuwe', 'Haren' , 'Isterberg'];
+    // Klasse = 'Open';
+    var ArrayausLocalStore = [];
+    let vereintesArray= [];
+   
+    
+        for(var i = 0; i < 5; i++){
+        const JSON_Ref = Klasse + Orte[0];
+        const resultref = localStorage.getItem(JSON_Ref);
+        ArrayausLocalStore[i] = JSON.parse(resultref);
+          
+         }
+
+
+         for(var i = 0; i < 5; i++){
+            //Vorname,Nachname,Pferd Überschrift kicken
+            ArrayausLocalStore[i].shift();
         
-        var ergebnis = getLocalStorage("Endergebnis", VerweiseOrte[i]);
-    
-        // Je nach Wert von i die Ergebnisse in verschiedenen Variablen speichern
-        switch (i) {
-            case 0:
-                OberlangenGesamtergebnis.push(ergebnis);
-                
-                break;
-            case 1:
-                LeerGesamtergebnis.push(ergebnis);
-                break;
-            case 2:
-                WesuweGesamtergebnis.push(ergebnis);
-                break;
-            case 3:
-                HarenGesamtergebnis.push(ergebnis);
-                break;
-            case 4:
-                IsterbergGesamtergebnis.push(ergebnis);
-                break;
-            default:
-                break;
+              
         }
-    }
-    
+         
 
-    switch (turnwert) {
-        case 0:
-            return OberlangenGesamtergebnis;
-        case 1:
-            return LeerGesamtergebnis;
-        case 2:
-            return WesuweGesamtergebnis;
-        case 3:
-            return HarenGesamtergebnis;         
-        case 4:
-            return IsterbergGesamtergebnis;
-        default:
-        break;
-    }
-    
+         vereintesArray = [[...ArrayausLocalStore[0], ...ArrayausLocalStore[1],...ArrayausLocalStore[2], ...ArrayausLocalStore[3],...ArrayausLocalStore[4]]]
+     
+       const dedupArray=removeDuplicates(vereintesArray);
 
+    return dedupArray;
+}
 
-   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function removeDuplicates(innerArray) {
+    const seen = new Set();
+    return innerArray[0].filter(value => {
+        const stringValue = String(value); // Konvertiere das Element in einen String
+        const lowerCaseValue = stringValue.toLowerCase();
+        if (!seen.has(lowerCaseValue)) {
+            seen.add(lowerCaseValue);
+            return true;
+        }
+        return false;
+    });
+}
 
 
 
